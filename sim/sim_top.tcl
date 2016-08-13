@@ -31,9 +31,10 @@ set USER_DEFINED_ELAB_OPTIONS ""
 # Call command to elaborate your design and testbench.
 elab
 #
+do wave.do
 # Run the simulation.
 run -a
 #
 # Report success to the shell.
-exit -code 0
+# exit -code 0
 
