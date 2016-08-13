@@ -13,12 +13,11 @@ module hollywood_unhash_core #(
     parameter R6 = 16'h9298
   )
   (
-    // management interface - sync reset
-    input wire mgmt_valid,
-    input wire [7:0] mgmt_data, // unused
-
     // input password interface
+    // channel 1: mgmt
+    // channel 0: data
     input wire in_valid,
+    input wire in_channel,
     input wire [15:0] in_data,
 
     // output success interface
@@ -43,13 +42,15 @@ module hollywood_unhash_core #(
       r6 <= '0;
     end
     else begin
-      if (mgmt_valid) begin
-        r4 <= '0;
-        r6 <= '0;
-      end
-      else if (in_valid) begin
-        r4 <= next_r4;
-        r6 <= next_r6;
+      if (in_valid) begin
+        if (in_channel) begin
+          r4 <= '0;
+          r6 <= '0;
+        end
+        else begin
+          r4 <= next_r4;
+          r6 <= next_r6;
+        end
       end
     end
   end
@@ -59,8 +60,10 @@ module hollywood_unhash_core #(
       out_valid <= '0;
     end
     else begin
-      if (mgmt_valid) begin
-        out_valid <= '0;
+      if (in_valid) begin
+        if (in_channel) begin
+          out_valid <= '0;
+        end
       end
       else begin
         out_valid <= (r6 == R6) && (r4 == R4);

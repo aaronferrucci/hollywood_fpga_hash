@@ -6,7 +6,6 @@
 
 `define IN sim_top.tb.test_core_inst_in_bfm
 `define OUT sim_top.tb.test_core_inst_out_bfm
-`define MGMT sim_top.tb.test_core_inst_mgmt_bfm
 module test_program;
 
   initial begin
@@ -31,20 +30,21 @@ module test_program;
 
   task automatic init;
     `IN.init();
-    `MGMT.init();
     `OUT.init();
   endtask
 
   task automatic mgmt_send;
-    `MGMT.set_transaction_data(8'hX);
-    `MGMT.push_transaction();
+    `IN.set_transaction_data(16'hX);
+    `IN.set_transaction_channel(1);
+    `IN.push_transaction();
 
-    wait(`MGMT.signal_src_transaction_complete);
+    wait(`IN.signal_src_transaction_complete);
     @(posedge `CLK);
   endtask
 
   task automatic in_send(input logic [15:0] data);
     `IN.set_transaction_data(data);
+    `IN.set_transaction_channel(0);
     `IN.push_transaction();
   endtask
 

@@ -100,27 +100,6 @@ set_interface_property reset SVD_ADDRESS_GROUP ""
 
 add_interface_port reset reset reset Input 1
 
-
-# 
-# connection point mgmt
-# 
-add_interface mgmt avalon_streaming end
-set_interface_property mgmt associatedClock clock
-set_interface_property mgmt dataBitsPerSymbol 8
-set_interface_property mgmt errorDescriptor ""
-set_interface_property mgmt firstSymbolInHighOrderBits true
-set_interface_property mgmt maxChannel 0
-set_interface_property mgmt readyLatency 0
-set_interface_property mgmt ENABLED true
-set_interface_property mgmt EXPORT_OF ""
-set_interface_property mgmt PORT_NAME_MAP ""
-set_interface_property mgmt CMSIS_SVD_VARIABLES ""
-set_interface_property mgmt SVD_ADDRESS_GROUP ""
-
-add_interface_port mgmt mgmt_data data Input 8
-add_interface_port mgmt mgmt_valid valid Input 1
-
-
 # 
 # connection point in
 # 
@@ -129,7 +108,7 @@ set_interface_property in associatedClock clock
 set_interface_property in dataBitsPerSymbol 8
 set_interface_property in errorDescriptor ""
 set_interface_property in firstSymbolInHighOrderBits true
-set_interface_property in maxChannel 0
+set_interface_property in maxChannel 1
 set_interface_property in readyLatency 0
 set_interface_property in ENABLED true
 set_interface_property in EXPORT_OF ""
@@ -137,8 +116,9 @@ set_interface_property in PORT_NAME_MAP ""
 set_interface_property in CMSIS_SVD_VARIABLES ""
 set_interface_property in SVD_ADDRESS_GROUP ""
 
-add_interface_port in in_data data Input 16
 add_interface_port in in_valid valid Input 1
+add_interface_port in in_channel channel Input 1
+add_interface_port in in_data data Input 16
 
 
 # 

@@ -6,7 +6,7 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
    element hollywood_hash_core_0
@@ -48,11 +48,7 @@
    internal="hollywood_hash_core_0.in"
    type="avalon_streaming"
    dir="end" />
- <interface
-   name="mgmt"
-   internal="hollywood_hash_core_0.mgmt"
-   type="avalon_streaming"
-   dir="end" />
+ <interface name="mgmt" internal="hollywood_hash_core_0.mgmt" />
  <interface
    name="out"
    internal="hollywood_hash_core_0.out"

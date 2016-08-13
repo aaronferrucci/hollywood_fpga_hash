@@ -1,3 +1,5 @@
+.PHONY: all
+all: create_tb gen_tb
 
 SYS := test_core
 QSYS := $(SYS).qsys
@@ -5,7 +7,7 @@ TB_QSYS := $(SYS)/testbench/$(SYS)_tb.qsys
 .PHONY: create_tb
 create_tb: $(TB_QSYS)
 
-$(TB_QSYS): test_core.qsys
+$(TB_QSYS): test_core.qsys ip/hollywood_hash/hollywood_hash_core.sv ip/hollywood_hash/hollywood_hash_core_hw.tcl
 	qsys-generate --testbench=STANDARD $(QSYS)
 
 .PHONY: gen_tb
