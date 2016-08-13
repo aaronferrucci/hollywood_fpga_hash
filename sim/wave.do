@@ -11,8 +11,8 @@ add wave -noupdate -radix hexadecimal /sim_top/tb/test_core_inst/in_valid
 add wave -noupdate -divider out
 add wave -noupdate -radix hexadecimal /sim_top/tb/test_core_inst/out_valid
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {0 ps} 0}
-quietly wave cursor active 0
+WaveRestoreCursors {{Cursor 1} {1155769 ps} 0}
+quietly wave cursor active 1
 configure wave -namecolwidth 268
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
@@ -27,4 +27,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {187272 ps} {192354 ps}
+WaveRestoreZoom {1040191 ps} {1238323 ps}
