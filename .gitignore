@@ -2,3 +2,6 @@ test_core
 .qsys_edit
 *.sopcinfo
 .*.swp
+sim/libraries/
+sim/modelsim.ini
+sim/transcript
