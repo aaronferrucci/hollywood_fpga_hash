@@ -16,13 +16,19 @@ module test_program;
         repeat(2) @(posedge `CLK);
 
         mgmt_send();
+        wait(`IN.signal_src_transaction_complete);
+        @(posedge `CLK);
 
-        in_send(16'h4949);
-        in_send(16'hb5de);
-        in_send(16'h9600);
+        send_password(48'habcdef0123XX);
+        send_password(48'h4949b5de96XX);
+        send_password(48'h55aa663301XX);
+        send_password(48'h0004a53cf15b);
 
       end
     join_any
+
+    wait(`IN.signal_src_transaction_complete);
+    @(posedge `CLK);
 
     repeat(10) @(posedge `CLK);
     $stop;
@@ -37,15 +43,19 @@ module test_program;
     `IN.set_transaction_data(16'hX);
     `IN.set_transaction_channel(1);
     `IN.push_transaction();
-
-    wait(`IN.signal_src_transaction_complete);
-    @(posedge `CLK);
   endtask
 
   task automatic in_send(input logic [15:0] data);
     `IN.set_transaction_data(data);
     `IN.set_transaction_channel(0);
     `IN.push_transaction();
+  endtask
+
+  task automatic send_password(input logic [47:0] password);
+    in_send(password[47 -: 16]);
+    in_send(password[47 - 16 -: 16]);
+    in_send(password[47 - 32 -: 16]);
+    mgmt_send();
   endtask
 
 endmodule
