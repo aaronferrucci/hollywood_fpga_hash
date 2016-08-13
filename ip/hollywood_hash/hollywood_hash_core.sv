@@ -60,14 +60,7 @@ module hollywood_unhash_core #(
       out_valid <= '0;
     end
     else begin
-      if (in_valid) begin
-        if (in_channel) begin
-          out_valid <= '0;
-        end
-      end
-      else begin
-        out_valid <= (r6 == R6) && (r4 == R4);
-      end
+      out_valid <= (r6 == R6) && (r4 == R4);
     end
   end
 
