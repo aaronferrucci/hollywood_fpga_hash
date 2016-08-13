@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element hollywood_hash_core_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="5CEBA2F17A7" />
+ <parameter name="deviceFamily" value="Cyclone V" />
+ <parameter name="deviceSpeedGrade" value="7" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="false" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface
+   name="clk"
+   internal="hollywood_hash_core_0.clock"
+   type="clock"
+   dir="end" />
+ <interface
+   name="in"
+   internal="hollywood_hash_core_0.in"
+   type="avalon_streaming"
+   dir="end" />
+ <interface
+   name="mgmt"
+   internal="hollywood_hash_core_0.mgmt"
+   type="avalon_streaming"
+   dir="end" />
+ <interface
+   name="out"
+   internal="hollywood_hash_core_0.out"
+   type="avalon_streaming"
+   dir="start" />
+ <interface
+   name="reset"
+   internal="hollywood_hash_core_0.reset"
+   type="reset"
+   dir="end" />
+ <module
+   name="hollywood_hash_core_0"
+   kind="hollywood_hash_core"
+   version="1.0"
+   enabled="1">
+  <parameter name="R4" value="65201" />
+  <parameter name="R6" value="37528" />
+ </module>
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>
