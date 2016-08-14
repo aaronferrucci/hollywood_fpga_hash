@@ -22,8 +22,12 @@ sim:
 
 .PHONY: clean
 clean:
-	rm -rf test_core
+	rm -rf test_core test_pw_gen
 	rm -f test_core.sopcinfo
 	rm -rf .qsys_edit
 	rm -rf db incremental_db
+	rm -f *.qws
+	rm -f c5_pin_model_dump.txt
 	make -C sim clean
+
+
