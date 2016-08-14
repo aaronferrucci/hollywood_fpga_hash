@@ -18,7 +18,7 @@ add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/pw_gen_0/pw2_
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {1185484 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 268
+configure wave -namecolwidth 329
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -32,4 +32,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {1312500 ps}
+WaveRestoreZoom {0 ps} {1259267 ps}

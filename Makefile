@@ -8,7 +8,7 @@ TB_QSYS := $(SYS)/testbench/$(TB_SYS).qsys
 .PHONY: create_tb
 create_tb: $(TB_QSYS)
 
-$(TB_QSYS): $(QSYS) ip/hollywood_hash_core/hollywood_hash_core.sv ip/hollywood_hash_core/hollywood_hash_core_hw.tcl
+$(TB_QSYS): $(QSYS) ip/hollywood_hash_core/hollywood_hash_core.sv ip/hollywood_hash_core/hollywood_hash_core_hw.tcl ip/pw_gen/pw_gen.sv ip/pw_gen/pw_gen_hw.tcl
 	qsys-generate --testbench=STANDARD $(QSYS)
 
 .PHONY: gen_tb
