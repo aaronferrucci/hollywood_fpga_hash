@@ -25,4 +25,5 @@ clean:
 	rm -rf test_core
 	rm -f test_core.sopcinfo
 	rm -rf .qsys_edit
+	rm -rf db incremental_db
 	make -C sim clean
