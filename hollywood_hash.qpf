@@ -1,13 +1,13 @@
 # -------------------------------------------------------------------------- #
 #
-# Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+# Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
 # Your use of Altera Corporation's design tools, logic functions 
 # and other software and tools, and its AMPP partner logic 
 # functions, and any output files from any of the foregoing 
 # (including device programming or simulation files), and any 
 # associated documentation or information are expressly subject 
 # to the terms and conditions of the Altera Program License 
-# Subscription Agreement, the Altera Quartus Prime License Agreement,
+# Subscription Agreement, the Altera Quartus II License Agreement,
 # the Altera MegaCore Function License Agreement, or other 
 # applicable license agreement, including, without limitation, 
 # that your use is for the sole purpose of programming logic 
@@ -17,14 +17,14 @@
 #
 # -------------------------------------------------------------------------- #
 #
-# Quartus Prime
-# Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-# Date created = 17:59:59  August 13, 2016
+# Quartus II 64-Bit
+# Version 14.1.1 Build 190 01/19/2015 SJ Full Version
+# Date created = 09:32:09  February 18, 2015
 #
 # -------------------------------------------------------------------------- #
 
-QUARTUS_VERSION = "16.0"
-DATE = "17:59:59  August 13, 2016"
+QUARTUS_VERSION = "14.1"
+DATE = "09:32:09  February 18, 2015"
 
 # Revisions
 

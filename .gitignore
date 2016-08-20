@@ -13,3 +13,8 @@ c5_pin_model_dump.txt
 simulation
 hollywood_hash.qws
 test_core_sim
+hollywood_hash
+hollywood_hash_description.txt
+*.bak
+workspace
+software

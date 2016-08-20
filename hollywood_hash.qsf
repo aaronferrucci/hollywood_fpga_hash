@@ -1,61 +1,351 @@
 # -------------------------------------------------------------------------- #
 #
-# Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
-# Your use of Altera Corporation's design tools, logic functions 
-# and other software and tools, and its AMPP partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Altera Program License 
-# Subscription Agreement, the Altera Quartus Prime License Agreement,
-# the Altera MegaCore Function License Agreement, or other 
-# applicable license agreement, including, without limitation, 
-# that your use is for the sole purpose of programming logic 
-# devices manufactured by Altera and sold by Altera or its 
-# authorized distributors.  Please refer to the applicable 
-# agreement for further details.
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files from any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, Altera MegaCore Function License
+# Agreement, or other applicable license agreement, including,
+# without limitation, that your use is for the sole purpose of
+# programming logic devices manufactured by Altera and sold by
+# Altera or its authorized distributors.  Please refer to the
+# applicable agreement for further details.
 #
 # -------------------------------------------------------------------------- #
 #
-# Quartus Prime
-# Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-# Date created = 17:59:59  August 13, 2016
+# Quartus II
+# Version 9.1 Build 304 01/25/2010 Service Pack 1 SJ Full Version
+# Date created = 10:48:18  May 10, 2010
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		hollywood_hash_assignment_defaults.qdf
+#		DOC_top_DE2115_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
 # 2) Altera recommends that you do not modify this file. This
-#    file is updated automatically by the Quartus Prime software
+#    file is updated automatically by the Quartus II software
 #    and any changes you make may be lost or overwritten.
 #
 # -------------------------------------------------------------------------- #
 
 
 set_global_assignment -name FAMILY "MAX 10"
-set_global_assignment -name DEVICE 10M08DAF484C8G
-set_global_assignment -name TOP_LEVEL_ENTITY hollywood_hash
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.0.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:59:59  AUGUST 13, 2016"
+set_global_assignment -name DEVICE 10M50DAF484C6GES
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:21:44  APRIL 15, 2013"
 set_global_assignment -name LAST_QUARTUS_VERSION 16.0.0
-set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
-set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name TOP_LEVEL_ENTITY hollywood_hash_top
+
+#set_global_assignment -name ENABLE_ERAM_PRELOAD OFF
+
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name READ_OR_WRITE_IN_BYTE_ADDRESS ON
+
+set_global_assignment -name SMART_RECOMPILE OFF
+
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE AREA
+
+set_global_assignment -name UNIPHY_SEQUENCER_DQS_CONFIG_ENABLE ON
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name ECO_REGENERATE_REPORT ON
+
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name INTERNAL_FLASH_UPDATE_MODE "SINGLE COMP IMAGE WITH ERAM"
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+
+set_location_assignment PIN_D9 -to global_reset_n
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to global_reset_n
+
+set_location_assignment PIN_AA13 -to SD_MCLK
+set_location_assignment PIN_AB2 -to INPUT_CURRENT_MDAT
+set_location_assignment PIN_W3 -to INPUT_VOLTAGE_MDAT
+set_location_assignment PIN_Y8 -to BOOST_DRV0_PWM_H
+set_location_assignment PIN_W4 -to BOOST_DRV0_CURRENT_MDAT
+set_location_assignment PIN_AB3 -to BOOST_DRV0_PWM_L
+set_location_assignment PIN_U7 -to BOOST_DRV1_CURRENT_MDAT
+set_location_assignment PIN_Y2 -to DCBUS_CURRENT_MDAT
+set_location_assignment PIN_U6 -to DCBUS_VOLTAGE_MDAT
+set_location_assignment PIN_W6 -to DRV_SCLK
+set_location_assignment PIN_AA2 -to DRV_SOMI
+set_location_assignment PIN_AA1 -to DRV_SIMO
+set_location_assignment PIN_W8 -to DRV0_SER_RX
+set_location_assignment PIN_AB8 -to DRV0_CSn
+set_location_assignment PIN_W7 -to DRV0_SER_TX
+set_location_assignment PIN_AA8 -to DRV0_SER_CLK
+set_location_assignment PIN_AA10 -to DRV0_EN_GATE_P
+set_location_assignment PIN_AB9 -to DRV0_EN_GATE_N
+set_location_assignment PIN_Y10 -to HSMC_DRV0_PWM_UH
+set_location_assignment PIN_AA9 -to HSMC_DRV0_PWM_UL
+set_location_assignment PIN_AA7 -to HSMC_DRV0_PWM_VH
+set_location_assignment PIN_AB7 -to HSMC_DRV0_PWM_VL
+set_location_assignment PIN_AA6 -to HSMC_DRV0_PWM_WH
+set_location_assignment PIN_AB6 -to HSMC_DRV0_PWM_WL
+set_location_assignment PIN_P10 -to DRV0_U_VOLTS_MDAT
+set_location_assignment PIN_Y4 -to DRV0_U_CURRENT_MDAT
+set_location_assignment PIN_R10 -to DRV0_V_VOLTS_MDAT
+set_location_assignment PIN_Y3 -to DRV0_V_CURRENT_MDAT
+set_location_assignment PIN_W10 -to DRV0_W_VOLTS_MDAT
+set_location_assignment PIN_AB5 -to DRV0_W_CURRENT_MDAT
+set_location_assignment PIN_W9 -to DRV0_QR_A
+set_location_assignment PIN_AA5 -to DRV0_QHR_U
+set_location_assignment PIN_P13 -to DRV0_QR_B
+set_location_assignment PIN_AA20 -to DRV0_QHR_V
+set_location_assignment PIN_R13 -to DRV0_QR_Z
+set_location_assignment PIN_AB21 -to DRV0_QHR_W
+set_location_assignment PIN_W13 -to BOOST_STATUS
+set_location_assignment PIN_W12 -to REGEN_STATUS
+set_location_assignment PIN_Y14 -to DRV1_SER_RX
+set_location_assignment PIN_AB15 -to DRV1_CSn
+set_location_assignment PIN_Y13 -to DRV1_SER_TX
+set_location_assignment PIN_AA14 -to DRV1_SER_CLK
+set_location_assignment PIN_V16 -to DRV1_EN_GATE_P
+set_location_assignment PIN_Y16 -to DRV1_EN_GATE_N
+set_location_assignment PIN_U15 -to HSMC_DRV1_PWM_UH
+set_location_assignment PIN_AA15 -to HSMC_DRV1_PWM_UL
+set_location_assignment PIN_W16 -to HSMC_DRV1_PWM_VH
+set_location_assignment PIN_AA16 -to HSMC_DRV1_PWM_VL
+set_location_assignment PIN_V15 -to HSMC_DRV1_PWM_WH
+set_location_assignment PIN_AB16 -to HSMC_DRV1_PWM_WL
+set_location_assignment PIN_V17 -to DRV1_U_VOLTS_MDAT
+set_location_assignment PIN_AB18 -to DRV1_U_CURRENT_MDAT
+set_location_assignment PIN_W17 -to DRV1_V_VOLTS_MDAT
+set_location_assignment PIN_AB17 -to DRV1_V_CURRENT_MDAT
+set_location_assignment PIN_V12 -to DRV1_W_VOLTS_MDAT
+set_location_assignment PIN_Y11 -to DRV1_W_CURRENT_MDAT
+set_location_assignment PIN_V11 -to DRV1_QR_A
+set_location_assignment PIN_W11 -to DRV1_QHR_U
+set_location_assignment PIN_P12 -to DRV1_QR_B
+set_location_assignment PIN_AB11 -to DRV1_QHR_V
+set_location_assignment PIN_R12 -to DRV1_QR_Z
+set_location_assignment PIN_AB10 -to DRV1_QHR_W
+set_location_assignment PIN_N4 -to DRV1_SER_TX_EN
+set_location_assignment PIN_AB13 -to DRV0_SER_TX_EN
+set_location_assignment PIN_Y1 -to VOLTAGE_FAULT
+set_location_assignment PIN_W5 -to DRV0_FAULTn
+set_location_assignment PIN_W14 -to CURRENT_FAULT
+set_location_assignment PIN_V13 -to DRV1_FAULTn
+set_location_assignment PIN_AA12 -to GPIO_0
+set_location_assignment PIN_AA11 -to DRV1_RESOLVER_SSCS
+set_location_assignment PIN_AB12 -to DRV0_RESOLVER_SSCS
+set_location_assignment PIN_Y17 -to DRV1_RESOLVER_SCSB
+set_location_assignment PIN_AB20 -to DRV0_RESOLVER_SCSB
+set_location_assignment PIN_AA17 -to DRV1_RESOLVER_INHB
+set_location_assignment PIN_AB19 -to DRV0_RESOLVER_INHB
+set_location_assignment PIN_W15 -to DRV1_RESOLVER_ERRHLD
+set_location_assignment PIN_V10 -to DRV0_RESOLVER_ERRHLD
+set_location_assignment PIN_V14 -to DRV1_RESOLVER_ERRSTB
+set_location_assignment PIN_V9 -to DRV0_RESOLVER_ERRSTB
+set_location_assignment PIN_AB14 -to HSMC_PRSNTn
+
+
+set_location_assignment PIN_J14 -to mem_a[12]
+set_location_assignment PIN_E20 -to mem_a[11]
+set_location_assignment PIN_Y20 -to mem_a[10]
+set_location_assignment PIN_E22 -to mem_a[9]
+set_location_assignment PIN_D22 -to mem_a[8]
+set_location_assignment PIN_E19 -to mem_a[7]
+set_location_assignment PIN_E21 -to mem_a[6]
+set_location_assignment PIN_F19 -to mem_a[5]
+set_location_assignment PIN_F21 -to mem_a[4]
+set_location_assignment PIN_U20 -to mem_a[3]
+set_location_assignment PIN_F18 -to mem_a[2]
+set_location_assignment PIN_F20 -to mem_a[1]
+set_location_assignment PIN_V20 -to mem_a[0]
+set_location_assignment PIN_W22 -to mem_ba[2]
+set_location_assignment PIN_N18 -to mem_ba[1]
+set_location_assignment PIN_V22 -to mem_ba[0]
+set_location_assignment PIN_U19 -to mem_cas_n[0]
+set_location_assignment PIN_D18 -to mem_ck[0]
+set_location_assignment PIN_E18 -to mem_ck_n[0]
+set_location_assignment PIN_W20 -to mem_cke[0]
+set_location_assignment PIN_Y22 -to mem_cs_n[0]
+set_location_assignment PIN_J15 -to mem_dm[0]
+set_location_assignment PIN_K19 -to mem_dq[7]
+set_location_assignment PIN_H20 -to mem_dq[6]
+set_location_assignment PIN_J20 -to mem_dq[5]
+set_location_assignment PIN_H19 -to mem_dq[4]
+set_location_assignment PIN_K18 -to mem_dq[3]
+set_location_assignment PIN_H18 -to mem_dq[2]
+set_location_assignment PIN_K20 -to mem_dq[1]
+set_location_assignment PIN_J18 -to mem_dq[0]
+set_location_assignment PIN_K14 -to mem_dqs[0]
+set_location_assignment PIN_W19 -to mem_odt[0]
+set_location_assignment PIN_V18 -to mem_ras_n[0]
+set_location_assignment PIN_B22 -to mem_reset_n
+set_location_assignment PIN_Y21 -to mem_we_n[0]
+
+#File list for BiSS Encoder IP
+
+#File list for EnDat Encoder IP
+
+set_location_assignment PIN_M9 -to clk_50
+set_instance_assignment -name IO_STANDARD 2.5V -to clk_50
+
+set_global_assignment -name OVERRIDE_DEFAULT_ELECTROMIGRATION_PARAMETERS ON
+set_global_assignment -name MAX_CONSECUTIVE_OUTPUTS_FOR_ELECTROMIGRATION 24
+set_global_assignment -name MAX_CURRENT_FOR_ELECTROMIGRATION 320
+set_global_assignment -name MAX_CONSECUTIVE_VIO_OUTPUTS_FOR_ELECTROMIGRATION 24
+set_global_assignment -name MAX_CURRENT_FOR_VIO_ELECTROMIGRATION 320
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name ENABLE_OCT_DONE ON
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_instance_assignment -name GLOBAL_SIGNAL OFF -to "dut_example_if0:if0|dut_example_if0_p0:p0|dut_example_if0_p0_DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0_m10:umemphy|dut_example_if0_p0_dqdqs_pads_m10:dq_ddio[*].ubidir_dq_dqs|altera_gpio_lite:dq_ddio_io|altgpio_one_bit:gpio_one_bit.i_loop[*].altgpio_bit_i|fr_clock"
+set_global_assignment -name UNIPHY_TEMP_VER_CODE 483505926
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_dq[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dq[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_dq[1] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dq[1] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_dq[2] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dq[2] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_dq[3] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dq[3] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_dq[4] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dq[4] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_dq[5] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dq[5] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_dq[6] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dq[6] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_dq[7] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dq[7] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL" -to mem_dqs[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dqs[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL" -to mem_dqs_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dqs_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL" -to mem_ck[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_ck[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL" -to mem_ck_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_ck_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[10] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[11] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[12] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[1] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[2] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[3] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[4] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[5] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[6] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[7] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[8] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_a[9] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_ba[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_ba[1] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_ba[2] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_cs_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_we_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_ras_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_cas_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_cke[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_odt[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD 1.5V -to mem_reset_n -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to mem_dm[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITH CALIBRATION" -to mem_dm[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name CKN_CK_PAIR ON -from mem_ck_n[0] -to mem_ck[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name DQ_GROUP 9 -from mem_dqs[0] -to mem_dq[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name DQ_GROUP 9 -from mem_dqs[0] -to mem_dq[1] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name DQ_GROUP 9 -from mem_dqs[0] -to mem_dq[2] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name DQ_GROUP 9 -from mem_dqs[0] -to mem_dq[3] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name DQ_GROUP 9 -from mem_dqs[0] -to mem_dq[4] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name DQ_GROUP 9 -from mem_dqs[0] -to mem_dq[5] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name DQ_GROUP 9 -from mem_dqs[0] -to mem_dq[6] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name DQ_GROUP 9 -from mem_dqs[0] -to mem_dq[7] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name DQ_GROUP 9 -from mem_dqs[0] -to mem_dm[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name DM_PIN ON -to mem_dm[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dq[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dq[1] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dq[2] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dq[3] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dq[4] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dq[5] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dq[6] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dq[7] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dm[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dqs[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_dqs_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[10] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[11] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[12] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[1] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[2] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[3] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[4] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[5] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[6] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[7] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[8] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_a[9] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_ba[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_ba[1] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_ba[2] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_cs_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_we_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_ras_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_cas_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_cke[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_odt[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_reset_n -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_ck[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to mem_ck_n[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name GLOBAL_SIGNAL OFF -to u_doc|mem_if_ddr3_emif_0|p0|umemphy|ureset|phy_reset_n -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name GLOBAL_SIGNAL OFF -to u_doc|mem_if_ddr3_emif_0|p0|umemphy|uread_datapath|reset_n_fifo_wraddress[0] -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_instance_assignment -name ENABLE_BENEFICIAL_SKEW_OPTIMIZATION_FOR_NON_GLOBAL_CLOCKS ON -to u_doc|mem_if_ddr3_emif_0 -tag __DOC_LVMC_MAX10_QSYS_mem_if_ddr3_emif_0_p0
+set_location_assignment PIN_V5 -to BOOST_DRV1_PWM_H
+set_location_assignment PIN_T20 -to LED[0]
+set_location_assignment PIN_U22 -to LED[1]
+set_location_assignment PIN_U21 -to LED[2]
+set_location_assignment PIN_AA21 -to LED[3]
+set_location_assignment PIN_AA22 -to LED[4]
+set_location_assignment PIN_L22 -to button[0]
+set_location_assignment PIN_M21 -to button[1]
+set_location_assignment PIN_M22 -to button[2]
+set_location_assignment PIN_N21 -to button[3]
+set_location_assignment PIN_V4 -to BOOST_DRV1_PWM_L
+set_instance_assignment -name IO_STANDARD "1.5 V" -to LED[0]
+set_instance_assignment -name IO_STANDARD "1.5 V" -to LED[1]
+set_instance_assignment -name IO_STANDARD "1.5 V" -to LED[2]
+set_instance_assignment -name IO_STANDARD "1.5 V" -to LED[3]
+set_instance_assignment -name IO_STANDARD "1.5 V" -to LED[4]
+set_instance_assignment -name IO_STANDARD "1.5 V" -to button[0]
+set_instance_assignment -name IO_STANDARD "1.5 V" -to button[1]
+set_instance_assignment -name IO_STANDARD "1.5 V" -to button[2]
+set_instance_assignment -name IO_STANDARD "1.5 V" -to button[3]
+set_location_assignment PIN_Y7 -to REGEN_EN_N
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to REGEN_EN_N
+set_global_assignment -name SYSTEMVERILOG_FILE hollywood_hash_top.sv
+set_global_assignment -name QIP_FILE hollywood_hash/synthesis/hollywood_hash.qip
+set_global_assignment -name VERILOG_FILE hollywood_hash/synthesis/hollywood_hash.v -library hollywood_hash
 set_global_assignment -name SDC_FILE hollywood_hash.sdc
-set_global_assignment -name QIP_FILE test_core/synthesis/test_core.qip
-set_global_assignment -name SYSTEMVERILOG_FILE hollywood_hash.sv
+
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
