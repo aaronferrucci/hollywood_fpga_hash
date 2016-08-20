@@ -45,7 +45,9 @@
    internal="pw_gen_0.out"
    type="avalon_streaming"
    dir="start" />
+ <interface name="req" internal="pw_gen_0.req" type="avalon_streaming" dir="end" />
  <interface name="reset" internal="pw_gen_0.reset" type="reset" dir="end" />
+ <interface name="store" internal="pw_gen_0.store" type="avalon" dir="start" />
  <module name="pw_gen_0" kind="pw_gen" version="1.0" enabled="1" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />

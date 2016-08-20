@@ -7,6 +7,14 @@ add wave -noupdate -divider out
 add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/out_channel
 add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/out_data
 add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/out_valid
+add wave -noupdate -divider req
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/req_valid
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/req_data
+add wave -noupdate -divider store
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/store_write
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/store_address
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/store_writedata
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/store_waitrequest
 add wave -noupdate -divider internals
 add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/pw_gen_0/pw1
 add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/pw_gen_0/pw2
@@ -32,4 +40,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {1259267 ps}
+WaveRestoreZoom {953428 ps} {1318571 ps}

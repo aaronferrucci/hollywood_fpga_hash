@@ -11,6 +11,16 @@ module pw_gen(
     output reg out_channel,
     output reg [15:0] out_data,
 
+    // input store_request interface
+    input wire req_valid,
+    input wire req_data, // unused
+
+    // output store interface
+    output reg store_write,
+    output reg [5:0] store_addr,
+    output reg [15:0] store_writedata,
+    input wire store_waitrequest,
+
     input wire clk,
     input wire reset
 );
@@ -133,6 +143,33 @@ module pw_gen(
     end
   end
     
+  always @(posedge clk or posedge reset) begin
+    if (reset) begin
+      store_write <= '0;
+      store_writedata <= '0;
+      store_addr <= '0;
+    end
+    else begin
+      // Note: waitrequest is ignored!
+      store_write <= p1_valid;
+      store_writedata <= p1_data;
+      if (p1_valid) begin
+
+        if (state == ST_IDLE) begin
+          store_addr <= '0;
+        end
+        else if (state == ST_MGMT) begin
+          // TO DO: allow increment to next block of 4 if request says so.
+          store_addr &= 6'b11_1000;
+        end
+        else begin
+          store_addr <= store_addr + 6'h2;
+        end
+
+      end
+    end
+  end
+
 endmodule
 
 `default_nettype wire
