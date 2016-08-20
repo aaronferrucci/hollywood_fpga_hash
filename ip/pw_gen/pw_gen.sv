@@ -143,23 +143,27 @@ module pw_gen(
     end
   end
     
+  reg received_req;
   always @(posedge clk or posedge reset) begin
     if (reset) begin
       store_write <= '0;
       store_writedata <= '0;
       store_addr <= '0;
+      received_req <= '0;
     end
     else begin
       // Note: waitrequest is ignored!
       store_write <= p1_valid;
       store_writedata <= p1_data;
+      if (req_valid)
+        received_req <= '1;
+      else if (state == ST_MGMT)
+        received_req <= '0;
       if (p1_valid) begin
-
         if (state == ST_IDLE) begin
           store_addr <= '0;
         end
-        else if (state == ST_MGMT) begin
-          // TO DO: allow increment to next block of 4 if request says so.
+        else if (!received_req && (state == ST_MGMT)) begin
           store_addr &= 6'b11_1000;
         end
         else begin
