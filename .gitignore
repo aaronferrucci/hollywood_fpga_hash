@@ -18,3 +18,9 @@ hollywood_hash_description.txt
 *.bak
 workspace
 software
+*.tcl~
+test_pw_gen
+test_pw_gen_sim/libraries
+test_pw_gen_sim/modelsim.ini
+test_pw_gen_sim/transcript
+vsim.wlf
