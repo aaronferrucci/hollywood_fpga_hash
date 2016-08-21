@@ -19,7 +19,6 @@ module test_program;
         repeat(2) @(posedge `CLK);
 
         test_run();
-        // test_pw1_overflow();
       end
       begin : drive_req
         repeat(100) @(negedge `OUT.sink_channel);
@@ -42,8 +41,6 @@ module test_program;
   endtask
 
   task automatic test_run;
-    `IN.set_transaction_data(1);
-    `IN.push_transaction();
     
     repeat(3 * 65536) begin
       @(posedge `CLK);
@@ -56,27 +53,6 @@ module test_program;
     repeat(10)
       @(posedge `CLK);
   endtask
-
-//  task automatic test_pw1_overflow;
-//    `DUT.p_pw1 = 16'hFFFF;
-//    `DUT.pw1 = 16'hFFFF;
-//    @(posedge `CLK);
-//
-//    `IN.set_transaction_data(1);
-//    `IN.push_transaction();
-//
-//    repeat(10) begin
-//      @(posedge `CLK);
-//      wait(`OUT.signal_transaction_received);
-//    end
-//
-//    `IN.set_transaction_data(0);
-//    `IN.push_transaction();
-//
-//    repeat(10)
-//      @(posedge `CLK);
-//  endtask
-
 
 endmodule
 

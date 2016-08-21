@@ -1,7 +1,11 @@
 `default_nettype none
 `timescale 1ns / 1ns
 
-module pw_gen(
+module pw_gen #(
+  parameter 
+    PW1_RESET = 16'b0,
+    PW2_RESET = 16'b0,
+    PW3_RESET = 8'b0) (
     // input mgmt interface
     input wire in_valid,
     input wire in_data,
@@ -45,7 +49,7 @@ module pw_gen(
   reg [7:0] p_pw3;
 
   reg run;
-  reg pw1_overflow, pw2_overflow;
+  reg pw1_overflow, pw2_overflow, pw3_overflow;
   always_comb begin : state_transition
     p1_state = ST_IDLE;
     p1_channel = '0;
@@ -102,20 +106,23 @@ module pw_gen(
 
   always @(posedge clk or posedge reset) begin
     if (reset) begin
-      run <= '0;
+      run <= '1;
     end
     else begin
       if (in_valid) begin
         run <= in_data;
+      end
+      else if (pw3_overflow) begin
+        run <= '0;
       end
     end
   end
 
   always @(posedge clk or posedge reset) begin
     if (reset) begin
-      pw1 <= '0;
-      pw2 <= '0;
-      pw3 <= '0;
+      pw1 <= PW1_RESET;
+      pw2 <= PW2_RESET;
+      pw3 <= PW3_RESET;
       pw1_overflow <= '0;
       pw2_overflow <= '0;
     end
@@ -125,6 +132,7 @@ module pw_gen(
       pw3 <= p_pw3;
       pw1_overflow <= pw1 == 16'hFFFF;
       pw2_overflow <= pw1_overflow && (pw2 == 16'hFFFF);
+      pw3_overflow <= pw1_overflow && pw2_overflow && (pw3 == 8'hFF);
     end
   end
 
