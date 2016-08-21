@@ -105,7 +105,7 @@ add_interface_port reset reset reset Input 1
 # 
 add_interface in avalon_streaming end
 set_interface_property in associatedClock clock
-set_interface_property in dataBitsPerSymbol 8
+set_interface_property in dataBitsPerSymbol 16
 set_interface_property in errorDescriptor ""
 set_interface_property in firstSymbolInHighOrderBits true
 set_interface_property in maxChannel 1
@@ -126,7 +126,7 @@ add_interface_port in in_data data Input 16
 # 
 add_interface out avalon_streaming start
 set_interface_property out associatedClock clock
-set_interface_property out dataBitsPerSymbol 8
+set_interface_property out dataBitsPerSymbol 1
 set_interface_property out errorDescriptor ""
 set_interface_property out firstSymbolInHighOrderBits true
 set_interface_property out maxChannel 0
@@ -137,6 +137,6 @@ set_interface_property out PORT_NAME_MAP ""
 set_interface_property out CMSIS_SVD_VARIABLES ""
 set_interface_property out SVD_ADDRESS_GROUP ""
 
-add_interface_port out out_data data Output 16
+add_interface_port out out_data data Output 1
 add_interface_port out out_valid valid Output 1
 

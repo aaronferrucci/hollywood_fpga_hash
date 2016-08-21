@@ -22,7 +22,7 @@ module hollywood_unhash_core #(
 
     // output success interface
     output reg out_valid,
-    output reg [15:0] out_data,
+    output reg out_data, // unused
 
     input wire clk,
     input wire reset
