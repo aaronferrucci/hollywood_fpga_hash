@@ -6,6 +6,7 @@
 
 `define IN sim_top.tb.test_pw_gen_inst_in_bfm
 `define OUT sim_top.tb.test_pw_gen_inst_out_bfm
+`define REQ sim_top.tb.test_pw_gen_inst_req_bfm
 
 `define DUT sim_top.tb.test_pw_gen_inst.pw_gen_0
 module test_program;
@@ -20,7 +21,13 @@ module test_program;
         test_run();
         // test_pw1_overflow();
       end
-    join_any
+      begin : drive_req
+        repeat(100) @(negedge `OUT.sink_channel);
+        $display("%t: 100 falling edges", $time());
+        `REQ.set_transaction_data(0);
+        `REQ.push_transaction();
+      end
+    join
 
     @(posedge `CLK);
 
@@ -31,6 +38,7 @@ module test_program;
   task automatic init;
     `IN.init();
     `OUT.init();
+    `REQ.init();
   endtask
 
   task automatic test_run;
