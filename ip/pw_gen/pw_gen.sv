@@ -194,7 +194,7 @@ module pw_gen #(
           // get ready to overwrite; not a password
           store_addr -= 6'h6;
         end
-        else begin
+        else if (state != ST_MGMT) begin
           store_addr <= store_addr + 6'h2;
         end
 
