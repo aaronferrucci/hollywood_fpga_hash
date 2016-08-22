@@ -3,9 +3,13 @@ quietly WaveActivateNextPane {} 0
 add wave -noupdate -divider {clk, reset}
 add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst_clock_bfm_clk_clk
 add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst_reset_bfm_reset_reset
-add wave -noupdate -divider in
-add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/in_valid
-add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/in_data
+add wave -noupdate -divider csr
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst_csr_bfm/avm_waitrequest
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst_csr_bfm/avm_readdata
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst_csr_bfm/avm_write
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst_csr_bfm/avm_read
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst_csr_bfm/avm_address
+add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst_csr_bfm/avm_writedata
 add wave -noupdate -divider out
 add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/out_channel
 add wave -noupdate -radix hexadecimal /sim_top/tb/test_pw_gen_inst/out_data
@@ -43,4 +47,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {9691500 ps}
+WaveRestoreZoom {0 ps} {225507555 ns}

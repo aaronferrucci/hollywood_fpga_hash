@@ -17,7 +17,7 @@ com
 # than the files compiled by the Quartus-generated IP simulation script)
 #
 vlog -sv sim_top.sv
-vlog -sv test_program.sv
+vlog -sv test_program.sv -L altera_common_sv_packages
 
 #
 # Set the top-level simulation or testbench module/entity name, which is

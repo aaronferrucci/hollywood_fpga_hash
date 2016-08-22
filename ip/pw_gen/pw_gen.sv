@@ -5,10 +5,15 @@ module pw_gen #(
   parameter 
     PW1_RESET = 16'b0,
     PW2_RESET = 16'b0,
-    PW3_RESET = 8'b0) (
+    PW3_RESET = 8'b0,
+    PW3_FINAL = 8'hFF) (
+
     // input mgmt interface
-    input wire in_valid,
-    input wire in_data,
+    input wire in_write,
+    input wire in_read,
+    input wire in_addr, // unused
+    input wire [31:0] in_writedata,
+    output reg [31:0] in_readdata,
 
     // output password interface
     output reg out_valid,
@@ -68,6 +73,11 @@ module pw_gen #(
           p_pw1 = pw1 + 1'b1;
           p1_valid = '1;
         end
+        else begin
+          p_pw1 = PW1_RESET;
+          p_pw2 = PW2_RESET;
+          p_pw3 = PW3_RESET;
+        end
       end
       ST1: begin
         p1_state = ST2;
@@ -100,17 +110,23 @@ module pw_gen #(
           p1_data = pw1;
           p_pw1 = pw1 + 1'b1;
         end
+        else begin
+          p1_state = ST_IDLE;
+        end
       end
     endcase
   end
 
+  always @*
+    in_readdata = { {31 {1'b0}}, run};
+
   always @(posedge clk or posedge reset) begin
     if (reset) begin
-      run <= '1;
+      run <= '0;
     end
     else begin
-      if (in_valid) begin
-        run <= in_data;
+      if (in_write) begin
+        run <= in_writedata[0];
       end
       else if (pw3_overflow) begin
         run <= '0;
@@ -125,6 +141,7 @@ module pw_gen #(
       pw3 <= PW3_RESET;
       pw1_overflow <= '0;
       pw2_overflow <= '0;
+      pw3_overflow <= '0;
     end
     else begin
       pw1 <= p_pw1;
@@ -132,7 +149,7 @@ module pw_gen #(
       pw3 <= p_pw3;
       pw1_overflow <= pw1 == 16'hFFFF;
       pw2_overflow <= pw1_overflow && (pw2 == 16'hFFFF);
-      pw3_overflow <= pw1_overflow && pw2_overflow && (pw3 == 8'hFF);
+      pw3_overflow <= pw1_overflow && pw2_overflow && (pw3 == PW3_FINAL);
     end
   end
 

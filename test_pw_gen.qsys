@@ -17,6 +17,22 @@
          type = "int";
       }
    }
+   element test_pw_gen
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
+   element test_pw_gen
+   {
+      datum _originalDeviceFamily
+      {
+         value = "MAX 10";
+         type = "String";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -39,7 +55,8 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clock" internal="pw_gen_0.clock" type="clock" dir="end" />
- <interface name="in" internal="pw_gen_0.in" type="avalon_streaming" dir="end" />
+ <interface name="csr" internal="pw_gen_0.csr" type="avalon" dir="end" />
+ <interface name="in" internal="pw_gen_0.in" />
  <interface
    name="out"
    internal="pw_gen_0.out"
@@ -51,7 +68,8 @@
  <module name="pw_gen_0" kind="pw_gen" version="1.0" enabled="1">
   <parameter name="PW1_RESET" value="0" />
   <parameter name="PW2_RESET" value="0" />
-  <parameter name="PW3_RESET" value="0" />
+  <parameter name="PW3_FINAL" value="170" />
+  <parameter name="PW3_RESET" value="170" />
  </module>
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />

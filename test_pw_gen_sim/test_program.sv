@@ -3,13 +3,14 @@
 
 `define CLK sim_top.tb.test_pw_gen_inst_clock_bfm.clk
 `define RESET sim_top.tb.test_pw_gen_inst_reset_bfm.reset
-
-`define IN sim_top.tb.test_pw_gen_inst_in_bfm
+`define CSR sim_top.tb.test_pw_gen_inst_csr_bfm
 `define OUT sim_top.tb.test_pw_gen_inst_out_bfm
 `define REQ sim_top.tb.test_pw_gen_inst_req_bfm
 
 `define DUT sim_top.tb.test_pw_gen_inst.pw_gen_0
 module test_program;
+
+  import avalon_mm_pkg::*;
 
   initial begin
     fork
@@ -35,20 +36,24 @@ module test_program;
   end
 
   task automatic init;
-    `IN.init();
+    `CSR.init();
     `OUT.init();
     `REQ.init();
   endtask
 
   task automatic test_run;
     
+    `CSR.set_command_address(0);
+    `CSR.set_command_data(1, 0);
+    `CSR.set_command_request(REQ_WRITE);
+    `CSR.push_command();
+    repeat(5)
+      @(posedge `CLK);
+
     repeat(3 * 65536) begin
       @(posedge `CLK);
       wait(`OUT.signal_transaction_received);
     end
-
-    `IN.set_transaction_data(0);
-    `IN.push_transaction();
 
     repeat(10)
       @(posedge `CLK);
