@@ -373,8 +373,8 @@ set_instance_parameter_value reset_bridge_0 {SYNCHRONOUS_EDGES} {none}
 set_instance_parameter_value reset_bridge_0 {NUM_RESET_OUTPUTS} {1}
 set_instance_parameter_value reset_bridge_0 {USE_RESET_REQUEST} {0}
 
-set num_engines 16
-for {set i 0 } {$i < $num_engines} {incr i} {
+set num_hashers 32
+for {set i 0 } {$i < $num_hashers} {incr i} {
   add_instance hollywood_hash_core_$i hollywood_hash_core 1.0
   set_instance_parameter_value hollywood_hash_core_$i {R4} {65201}
   set_instance_parameter_value hollywood_hash_core_$i {R6} {37528}
@@ -382,8 +382,8 @@ for {set i 0 } {$i < $num_engines} {incr i} {
   add_instance pw_gen_$i pw_gen 1.0
   set_instance_parameter_value pw_gen_$i {PW1_RESET} {0}
   set_instance_parameter_value pw_gen_$i {PW2_RESET} {0}
-  set_instance_parameter_value pw_gen_$i {PW3_RESET} [ expr {$i * (256 / $num_engines)} ]
-  set_instance_parameter_value pw_gen_$i {PW3_FINAL} [ expr {-1 + ($i + 1) * (256 / $num_engines)} ]
+  set_instance_parameter_value pw_gen_$i {PW3_RESET} [ expr {$i * (256 / $num_hashers)} ]
+  set_instance_parameter_value pw_gen_$i {PW3_FINAL} [ expr {-1 + ($i + 1) * (256 / $num_hashers)} ]
 
   add_instance pw_mem_$i altera_avalon_onchip_memory2 16.0
   set_instance_parameter_value pw_mem_$i {allowInSystemMemoryContentEditor} {0}
