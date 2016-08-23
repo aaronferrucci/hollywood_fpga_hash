@@ -97,9 +97,6 @@ int dump(t_hasher *p_hasher)
       p[i % 4] = pMem1[i];
     }
   }
-  if (accept_count) {
-	 printf("hasher at base address 0x%08X produced %d passwords\n", pMem1, accept_count);
-  }
   return accept_count;
 }
 
@@ -119,7 +116,7 @@ void clear(t_hasher *p_hasher)
   int span;
 
  */
-#define NUM_HASHERS 32
+#define NUM_HASHERS 16
 int main()
 {
   t_hasher h0 = {
@@ -202,86 +199,6 @@ int main()
     (volatile unsigned short*)PW_MEM_15_BASE,
     PW_MEM_15_SPAN
   };
-  t_hasher h16 = {
-    (volatile int*)PW_GEN_16_BASE,
-    (volatile unsigned short*)PW_MEM_16_BASE,
-    PW_MEM_16_SPAN
-  };
-  t_hasher h17 = {
-    (volatile int*)PW_GEN_17_BASE,
-    (volatile unsigned short*)PW_MEM_17_BASE,
-    PW_MEM_17_SPAN
-  };
-  t_hasher h18 = {
-    (volatile int*)PW_GEN_18_BASE,
-    (volatile unsigned short*)PW_MEM_18_BASE,
-    PW_MEM_18_SPAN
-  };
-  t_hasher h19 = {
-    (volatile int*)PW_GEN_19_BASE,
-    (volatile unsigned short*)PW_MEM_19_BASE,
-    PW_MEM_19_SPAN
-  };
-  t_hasher h20 = {
-    (volatile int*)PW_GEN_20_BASE,
-    (volatile unsigned short*)PW_MEM_20_BASE,
-    PW_MEM_20_SPAN
-  };
-  t_hasher h21 = {
-    (volatile int*)PW_GEN_21_BASE,
-    (volatile unsigned short*)PW_MEM_21_BASE,
-    PW_MEM_21_SPAN
-  };
-  t_hasher h22 = {
-    (volatile int*)PW_GEN_22_BASE,
-    (volatile unsigned short*)PW_MEM_22_BASE,
-    PW_MEM_22_SPAN
-  };
-  t_hasher h23 = {
-    (volatile int*)PW_GEN_23_BASE,
-    (volatile unsigned short*)PW_MEM_23_BASE,
-    PW_MEM_23_SPAN
-  };
-  t_hasher h24 = {
-    (volatile int*)PW_GEN_24_BASE,
-    (volatile unsigned short*)PW_MEM_24_BASE,
-    PW_MEM_24_SPAN
-  };
-  t_hasher h25 = {
-    (volatile int*)PW_GEN_25_BASE,
-    (volatile unsigned short*)PW_MEM_25_BASE,
-    PW_MEM_25_SPAN
-  };
-  t_hasher h26 = {
-    (volatile int*)PW_GEN_26_BASE,
-    (volatile unsigned short*)PW_MEM_26_BASE,
-    PW_MEM_26_SPAN
-  };
-  t_hasher h27 = {
-    (volatile int*)PW_GEN_27_BASE,
-    (volatile unsigned short*)PW_MEM_27_BASE,
-    PW_MEM_27_SPAN
-  };
-  t_hasher h28 = {
-    (volatile int*)PW_GEN_28_BASE,
-    (volatile unsigned short*)PW_MEM_28_BASE,
-    PW_MEM_28_SPAN
-  };
-  t_hasher h29 = {
-    (volatile int*)PW_GEN_29_BASE,
-    (volatile unsigned short*)PW_MEM_29_BASE,
-    PW_MEM_29_SPAN
-  };
-  t_hasher h30 = {
-    (volatile int*)PW_GEN_30_BASE,
-    (volatile unsigned short*)PW_MEM_30_BASE,
-    PW_MEM_30_SPAN
-  };
-  t_hasher h31 = {
-    (volatile int*)PW_GEN_31_BASE,
-    (volatile unsigned short*)PW_MEM_31_BASE,
-    PW_MEM_31_SPAN
-  };
 
   t_hasher *hashers[] = {
     &h0,
@@ -300,22 +217,6 @@ int main()
     &h13,
     &h14,
     &h15,
-    &h16,
-    &h17,
-    &h18,
-    &h19,
-    &h20,
-    &h21,
-    &h22,
-    &h23,
-    &h24,
-    &h25,
-    &h26,
-    &h27,
-    &h28,
-    &h29,
-    &h30,
-    &h31,
   };
 
   int count = 0;
