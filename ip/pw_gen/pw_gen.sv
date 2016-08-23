@@ -178,9 +178,7 @@ module pw_gen #(
     end
     else begin
       // Note: waitrequest is ignored!
-      // The assumption is that the store master connects only
-      // to an onchip memory, and nothing else masters that memory.
-      store_write <= p1_valid && ~p1_channel;
+      store_write <= p1_valid;
       store_writedata <= p1_data;
       if (req_valid)
         received_req <= '1;
@@ -191,8 +189,7 @@ module pw_gen #(
           store_addr <= '0;
         end
         else if (!received_req && (state == ST_MGMT)) begin
-          // get ready to overwrite; not a password
-          store_addr -= 6'h6;
+          store_addr &= 6'b11_1000;
         end
         else begin
           store_addr <= store_addr + 6'h2;
