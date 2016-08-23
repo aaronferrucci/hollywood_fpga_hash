@@ -373,7 +373,7 @@ set_instance_parameter_value reset_bridge_0 {SYNCHRONOUS_EDGES} {none}
 set_instance_parameter_value reset_bridge_0 {NUM_RESET_OUTPUTS} {1}
 set_instance_parameter_value reset_bridge_0 {USE_RESET_REQUEST} {0}
 
-set num_engines 16
+set num_engines 32
 for {set i 0 } {$i < $num_engines} {incr i} {
   add_instance hollywood_hash_core_$i hollywood_hash_core 1.0
   set_instance_parameter_value hollywood_hash_core_$i {R4} {65201}
