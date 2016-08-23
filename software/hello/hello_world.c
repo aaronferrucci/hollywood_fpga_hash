@@ -82,16 +82,19 @@ int dump(t_hasher *p_hasher)
   int accept_count = 0;
   for (int i = 0; i < p_hasher->span / sizeof(unsigned short); ++i)
   {
-    p[i % 3] = pMem1[i];
-    if ((i % 3) == 2)
+    if ((i % 4) == 3)
     {
       fix(p);
-      if (test(p)) {
-        printf("accept: ");
-        print(p);
-        accept_count++;
-      }
-      p[0] = p[1] = p[2] = 0;
+	  if (test(p)) {
+		printf("accept: ");
+	    print(p);
+	    accept_count++;
+	  }
+	  p[0] = p[1] = p[2] = 0;
+    }
+    else
+    {
+      p[i % 4] = pMem1[i];
     }
   }
   if (accept_count) {
@@ -317,7 +320,6 @@ int main()
 
   int count = 0;
   printf("Hollywood hasher\n");
-#if 1
   printf("setting 'run' to 0\n");
   for (int i = 0; i < NUM_HASHERS; ++i) {
     write_csr(hashers[i], 0);
@@ -339,7 +341,6 @@ int main()
     write_led(count++);
     printf("count: %d\n", count);
   }
-#endif
 
   int num_passwords = 0;
   for (int i = 0; i < NUM_HASHERS; ++i) {
