@@ -6,7 +6,7 @@
    version="1.0"
    description=""
    tags="INTERNAL_COMPONENT=false"
-   categories="System" />
+   categories="" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
    element clk_50
@@ -855,7 +855,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="hollywood_hash.qpf" />
+ <parameter name="projectName" value="" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -873,9 +873,6 @@
    internal="pll.areset_conduit"
    type="conduit"
    dir="end" />
- <interface name="pll_c0_conduit" internal="pll.c0_conduit" />
- <interface name="pll_c1_conduit" internal="pll.c1_conduit" />
- <interface name="pll_c4_conduit" internal="pll.c4_conduit" />
  <interface
    name="pll_locked_conduit"
    internal="pll.locked_conduit"
@@ -1186,7 +1183,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName" value="$${FILENAME}_mem" />
+  <parameter name="autoInitializationFileName" value="hollywood_hash_mem" />
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -1753,7 +1750,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_0</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_0</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -1784,7 +1781,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_1</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_1</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -1815,7 +1812,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_10</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_10</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -1846,7 +1843,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_11</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_11</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -1877,7 +1874,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_12</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_12</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -1908,7 +1905,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_13</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_13</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -1939,7 +1936,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_14</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_14</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -1970,7 +1967,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_15</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_15</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2001,7 +1998,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_16</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_16</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2032,7 +2029,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_17</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_17</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2063,7 +2060,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_18</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_18</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2094,7 +2091,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_19</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_19</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2125,7 +2122,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_2</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_2</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2156,7 +2153,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_20</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_20</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2187,7 +2184,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_21</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_21</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2218,7 +2215,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_22</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_22</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2249,7 +2246,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_23</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_23</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2280,7 +2277,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_24</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_24</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2311,7 +2308,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_25</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_25</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2342,7 +2339,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_26</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_26</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2373,7 +2370,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_27</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_27</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2404,7 +2401,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_28</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_28</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2435,7 +2432,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_29</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_29</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2466,7 +2463,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_3</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_3</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2497,7 +2494,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_30</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_30</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2528,7 +2525,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_31</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_31</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2559,7 +2556,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_4</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_4</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2590,7 +2587,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_5</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_5</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2621,7 +2618,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_6</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_6</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2652,7 +2649,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_7</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_7</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2683,7 +2680,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_8</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_8</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
@@ -2714,7 +2711,7 @@
    version="16.0"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_pw_mem_9</parameter>
+  <parameter name="autoInitializationFileName">hollywood_hash_pw_mem_9</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="16" />
