@@ -74,9 +74,9 @@ module pw_gen #(
           p1_valid = '1;
         end
         else begin
-          p_pw1 = PW1_RESET;
-          p_pw2 = PW2_RESET;
-          p_pw3 = PW3_RESET;
+          p_pw1 = PW1_RESET[15:0];
+          p_pw2 = PW2_RESET[15:0];
+          p_pw3 = PW3_RESET[7:0];
         end
       end
       ST1: begin
@@ -136,9 +136,9 @@ module pw_gen #(
 
   always @(posedge clk or posedge reset) begin
     if (reset) begin
-      pw1 <= PW1_RESET;
-      pw2 <= PW2_RESET;
-      pw3 <= PW3_RESET;
+      pw1 <= PW1_RESET[15:0];
+      pw2 <= PW2_RESET[15:0];
+      pw3 <= PW3_RESET[7:0];
       pw1_overflow <= '0;
       pw2_overflow <= '0;
       pw3_overflow <= '0;
