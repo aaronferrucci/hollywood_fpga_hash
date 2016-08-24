@@ -15,6 +15,9 @@ module hollywood_hash_top(
 
     .clk_adc_out_clk (),
     .leds_export (pio_val),
+	 .pll_c0_conduit_export (),
+	 .pll_c1_conduit_export (),
+	 .pll_c4_conduit_export (),
 
     .pll_areset_conduit_export (1'b0),
     .pll_locked_conduit_export (pll_locked)
