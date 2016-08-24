@@ -8,7 +8,15 @@ sim/transcript
 sim/vsim.wlf
 db
 incremental_db
-output_files
+output_files/*.sof
+output_files/*.rpt
+output_files/*.done
+output_files/*.summary
+output_files/*.sld
+output_files/*.pin
+output_files/*.pof
+output_files/*.jdi
+output_files/*.smsg
 c5_pin_model_dump.txt
 simulation
 hollywood_hash.qws
