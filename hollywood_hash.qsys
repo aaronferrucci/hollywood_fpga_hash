@@ -1228,7 +1228,7 @@
   <parameter name="dataAddrWidth" value="18" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='mem.s1' start='0x0' end='0x10000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2.debug_mem_slave' start='0x10000' end='0x10800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='leds.s1' start='0x18000' end='0x18010' type='altera_avalon_pio.s1' /><slave name='sysid_0.control_slave' start='0x18010' end='0x18018' type='altera_avalon_sysid_qsys.control_slave' /><slave name='pll.pll_slave' start='0x18020' end='0x18030' type='altpll.pll_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x18030' end='0x18038' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='pw_mem_0.s1' start='0x18040' end='0x18080' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_1.s1' start='0x18080' end='0x180C0' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_2.s1' start='0x180C0' end='0x18100' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_3.s1' start='0x18100' end='0x18140' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_4.s1' start='0x18140' end='0x18180' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_5.s1' start='0x18180' end='0x181C0' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_6.s1' start='0x181C0' end='0x18200' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_7.s1' start='0x18200' end='0x18240' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_8.s1' start='0x18240' end='0x18280' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_9.s1' start='0x18280' end='0x182C0' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_10.s1' start='0x182C0' end='0x18300' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_11.s1' start='0x18300' end='0x18340' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_12.s1' start='0x18340' end='0x18380' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_13.s1' start='0x18380' end='0x183C0' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_14.s1' start='0x183C0' end='0x18400' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_15.s1' start='0x18400' end='0x18440' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_16.s1' start='0x18440' end='0x18480' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_17.s1' start='0x18480' end='0x184C0' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_18.s1' start='0x184C0' end='0x18500' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_19.s1' start='0x18500' end='0x18540' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_20.s1' start='0x18540' end='0x18580' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_21.s1' start='0x18580' end='0x185C0' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_22.s1' start='0x185C0' end='0x18600' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_23.s1' start='0x18600' end='0x18640' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_24.s1' start='0x18640' end='0x18680' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_25.s1' start='0x18680' end='0x186C0' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_26.s1' start='0x186C0' end='0x18700' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_27.s1' start='0x18700' end='0x18740' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_28.s1' start='0x18740' end='0x18780' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_29.s1' start='0x18780' end='0x187C0' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_30.s1' start='0x187C0' end='0x18800' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_31.s1' start='0x18800' end='0x18840' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_gen_0.csr' start='0x20000' end='0x20008' type='pw_gen.csr' /><slave name='pw_gen_1.csr' start='0x20008' end='0x20010' type='pw_gen.csr' /><slave name='pw_gen_2.csr' start='0x20010' end='0x20018' type='pw_gen.csr' /><slave name='pw_gen_3.csr' start='0x20018' end='0x20020' type='pw_gen.csr' /><slave name='pw_gen_4.csr' start='0x20020' end='0x20028' type='pw_gen.csr' /><slave name='pw_gen_5.csr' start='0x20028' end='0x20030' type='pw_gen.csr' /><slave name='pw_gen_6.csr' start='0x20030' end='0x20038' type='pw_gen.csr' /><slave name='pw_gen_7.csr' start='0x20038' end='0x20040' type='pw_gen.csr' /><slave name='pw_gen_8.csr' start='0x20040' end='0x20048' type='pw_gen.csr' /><slave name='pw_gen_9.csr' start='0x20048' end='0x20050' type='pw_gen.csr' /><slave name='pw_gen_10.csr' start='0x20050' end='0x20058' type='pw_gen.csr' /><slave name='pw_gen_11.csr' start='0x20058' end='0x20060' type='pw_gen.csr' /><slave name='pw_gen_12.csr' start='0x20060' end='0x20068' type='pw_gen.csr' /><slave name='pw_gen_13.csr' start='0x20068' end='0x20070' type='pw_gen.csr' /><slave name='pw_gen_14.csr' start='0x20070' end='0x20078' type='pw_gen.csr' /><slave name='pw_gen_15.csr' start='0x20078' end='0x20080' type='pw_gen.csr' /><slave name='pw_gen_16.csr' start='0x20080' end='0x20088' type='pw_gen.csr' /><slave name='pw_gen_17.csr' start='0x20088' end='0x20090' type='pw_gen.csr' /><slave name='pw_gen_18.csr' start='0x20090' end='0x20098' type='pw_gen.csr' /><slave name='pw_gen_19.csr' start='0x20098' end='0x200A0' type='pw_gen.csr' /><slave name='pw_gen_20.csr' start='0x200A0' end='0x200A8' type='pw_gen.csr' /><slave name='pw_gen_21.csr' start='0x200A8' end='0x200B0' type='pw_gen.csr' /><slave name='pw_gen_22.csr' start='0x200B0' end='0x200B8' type='pw_gen.csr' /><slave name='pw_gen_23.csr' start='0x200B8' end='0x200C0' type='pw_gen.csr' /><slave name='pw_gen_24.csr' start='0x200C0' end='0x200C8' type='pw_gen.csr' /><slave name='pw_gen_25.csr' start='0x200C8' end='0x200D0' type='pw_gen.csr' /><slave name='pw_gen_26.csr' start='0x200D0' end='0x200D8' type='pw_gen.csr' /><slave name='pw_gen_27.csr' start='0x200D8' end='0x200E0' type='pw_gen.csr' /><slave name='pw_gen_28.csr' start='0x200E0' end='0x200E8' type='pw_gen.csr' /><slave name='pw_gen_29.csr' start='0x200E8' end='0x200F0' type='pw_gen.csr' /><slave name='pw_gen_30.csr' start='0x200F0' end='0x200F8' type='pw_gen.csr' /><slave name='pw_gen_31.csr' start='0x200F8' end='0x20100' type='pw_gen.csr' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='mem.s1' start='0x0' end='0x10000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2.debug_mem_slave' start='0x10000' end='0x10800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='leds.s1' start='0x10800' end='0x10810' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x10810' end='0x10820' type='altpll.pll_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x10820' end='0x10828' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid_0.control_slave' start='0x10830' end='0x10838' type='altera_avalon_sysid_qsys.control_slave' /><slave name='pw_mem_0.s1' start='0x18000' end='0x18080' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_1.s1' start='0x18080' end='0x18100' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_2.s1' start='0x18100' end='0x18180' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_3.s1' start='0x18180' end='0x18200' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_4.s1' start='0x18200' end='0x18280' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_5.s1' start='0x18280' end='0x18300' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_6.s1' start='0x18300' end='0x18380' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_7.s1' start='0x18380' end='0x18400' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_8.s1' start='0x18400' end='0x18480' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_9.s1' start='0x18480' end='0x18500' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_10.s1' start='0x18500' end='0x18580' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_11.s1' start='0x18580' end='0x18600' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_12.s1' start='0x18600' end='0x18680' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_13.s1' start='0x18680' end='0x18700' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_14.s1' start='0x18700' end='0x18780' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_15.s1' start='0x18780' end='0x18800' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_16.s1' start='0x18800' end='0x18880' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_17.s1' start='0x18880' end='0x18900' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_18.s1' start='0x18900' end='0x18980' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_19.s1' start='0x18980' end='0x18A00' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_20.s1' start='0x18A00' end='0x18A80' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_21.s1' start='0x18A80' end='0x18B00' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_22.s1' start='0x18B00' end='0x18B80' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_23.s1' start='0x18B80' end='0x18C00' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_24.s1' start='0x18C00' end='0x18C80' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_25.s1' start='0x18C80' end='0x18D00' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_26.s1' start='0x18D00' end='0x18D80' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_27.s1' start='0x18D80' end='0x18E00' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_28.s1' start='0x18E00' end='0x18E80' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_29.s1' start='0x18E80' end='0x18F00' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_30.s1' start='0x18F00' end='0x18F80' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_mem_31.s1' start='0x18F80' end='0x19000' type='altera_avalon_onchip_memory2.s1' /><slave name='pw_gen_0.csr' start='0x20000' end='0x20008' type='pw_gen.csr' /><slave name='pw_gen_1.csr' start='0x20008' end='0x20010' type='pw_gen.csr' /><slave name='pw_gen_2.csr' start='0x20010' end='0x20018' type='pw_gen.csr' /><slave name='pw_gen_3.csr' start='0x20018' end='0x20020' type='pw_gen.csr' /><slave name='pw_gen_4.csr' start='0x20020' end='0x20028' type='pw_gen.csr' /><slave name='pw_gen_5.csr' start='0x20028' end='0x20030' type='pw_gen.csr' /><slave name='pw_gen_6.csr' start='0x20030' end='0x20038' type='pw_gen.csr' /><slave name='pw_gen_7.csr' start='0x20038' end='0x20040' type='pw_gen.csr' /><slave name='pw_gen_8.csr' start='0x20040' end='0x20048' type='pw_gen.csr' /><slave name='pw_gen_9.csr' start='0x20048' end='0x20050' type='pw_gen.csr' /><slave name='pw_gen_10.csr' start='0x20050' end='0x20058' type='pw_gen.csr' /><slave name='pw_gen_11.csr' start='0x20058' end='0x20060' type='pw_gen.csr' /><slave name='pw_gen_12.csr' start='0x20060' end='0x20068' type='pw_gen.csr' /><slave name='pw_gen_13.csr' start='0x20068' end='0x20070' type='pw_gen.csr' /><slave name='pw_gen_14.csr' start='0x20070' end='0x20078' type='pw_gen.csr' /><slave name='pw_gen_15.csr' start='0x20078' end='0x20080' type='pw_gen.csr' /><slave name='pw_gen_16.csr' start='0x20080' end='0x20088' type='pw_gen.csr' /><slave name='pw_gen_17.csr' start='0x20088' end='0x20090' type='pw_gen.csr' /><slave name='pw_gen_18.csr' start='0x20090' end='0x20098' type='pw_gen.csr' /><slave name='pw_gen_19.csr' start='0x20098' end='0x200A0' type='pw_gen.csr' /><slave name='pw_gen_20.csr' start='0x200A0' end='0x200A8' type='pw_gen.csr' /><slave name='pw_gen_21.csr' start='0x200A8' end='0x200B0' type='pw_gen.csr' /><slave name='pw_gen_22.csr' start='0x200B0' end='0x200B8' type='pw_gen.csr' /><slave name='pw_gen_23.csr' start='0x200B8' end='0x200C0' type='pw_gen.csr' /><slave name='pw_gen_24.csr' start='0x200C0' end='0x200C8' type='pw_gen.csr' /><slave name='pw_gen_25.csr' start='0x200C8' end='0x200D0' type='pw_gen.csr' /><slave name='pw_gen_26.csr' start='0x200D0' end='0x200D8' type='pw_gen.csr' /><slave name='pw_gen_27.csr' start='0x200D8' end='0x200E0' type='pw_gen.csr' /><slave name='pw_gen_28.csr' start='0x200E0' end='0x200E8' type='pw_gen.csr' /><slave name='pw_gen_29.csr' start='0x200E8' end='0x200F0' type='pw_gen.csr' /><slave name='pw_gen_30.csr' start='0x200F0' end='0x200F8' type='pw_gen.csr' /><slave name='pw_gen_31.csr' start='0x200F8' end='0x20100' type='pw_gen.csr' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -1763,7 +1763,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -1794,7 +1794,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -1825,7 +1825,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -1856,7 +1856,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -1887,7 +1887,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -1918,7 +1918,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -1949,7 +1949,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -1980,7 +1980,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2011,7 +2011,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2042,7 +2042,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2073,7 +2073,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2104,7 +2104,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2135,7 +2135,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2166,7 +2166,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2197,7 +2197,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2228,7 +2228,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2259,7 +2259,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2290,7 +2290,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2321,7 +2321,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2352,7 +2352,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2383,7 +2383,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2414,7 +2414,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2445,7 +2445,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2476,7 +2476,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2507,7 +2507,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2538,7 +2538,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2569,7 +2569,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2600,7 +2600,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2631,7 +2631,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2662,7 +2662,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2693,7 +2693,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2724,7 +2724,7 @@
   <parameter name="initMemContent" value="false" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="64" />
+  <parameter name="memorySize" value="128" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -2760,7 +2760,7 @@
    start="nios2.data_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018030" />
+  <parameter name="baseAddress" value="0x00010820" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2769,7 +2769,7 @@
    start="nios2.data_master"
    end="sysid_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018010" />
+  <parameter name="baseAddress" value="0x00010830" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3075,7 +3075,7 @@
    start="nios2.data_master"
    end="pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018020" />
+  <parameter name="baseAddress" value="0x00010810" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3084,7 +3084,7 @@
    start="nios2.data_master"
    end="pw_mem_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018040" />
+  <parameter name="baseAddress" value="0x00018000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3102,7 +3102,7 @@
    start="nios2.data_master"
    end="pw_mem_2.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000180c0" />
+  <parameter name="baseAddress" value="0x00018100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3111,7 +3111,7 @@
    start="nios2.data_master"
    end="pw_mem_3.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018100" />
+  <parameter name="baseAddress" value="0x00018180" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3120,7 +3120,7 @@
    start="nios2.data_master"
    end="pw_mem_4.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018140" />
+  <parameter name="baseAddress" value="0x00018200" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3129,7 +3129,7 @@
    start="nios2.data_master"
    end="pw_mem_5.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018180" />
+  <parameter name="baseAddress" value="0x00018280" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3138,7 +3138,7 @@
    start="nios2.data_master"
    end="pw_mem_6.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000181c0" />
+  <parameter name="baseAddress" value="0x00018300" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3147,7 +3147,7 @@
    start="nios2.data_master"
    end="pw_mem_7.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018200" />
+  <parameter name="baseAddress" value="0x00018380" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3156,7 +3156,7 @@
    start="nios2.data_master"
    end="pw_mem_8.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018240" />
+  <parameter name="baseAddress" value="0x00018400" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3165,7 +3165,7 @@
    start="nios2.data_master"
    end="pw_mem_9.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018280" />
+  <parameter name="baseAddress" value="0x00018480" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3174,7 +3174,7 @@
    start="nios2.data_master"
    end="pw_mem_10.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000182c0" />
+  <parameter name="baseAddress" value="0x00018500" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3183,7 +3183,7 @@
    start="nios2.data_master"
    end="pw_mem_11.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018300" />
+  <parameter name="baseAddress" value="0x00018580" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3192,7 +3192,7 @@
    start="nios2.data_master"
    end="pw_mem_12.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018340" />
+  <parameter name="baseAddress" value="0x00018600" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3201,7 +3201,7 @@
    start="nios2.data_master"
    end="pw_mem_13.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018380" />
+  <parameter name="baseAddress" value="0x00018680" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3210,7 +3210,7 @@
    start="nios2.data_master"
    end="pw_mem_14.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000183c0" />
+  <parameter name="baseAddress" value="0x00018700" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3219,7 +3219,7 @@
    start="nios2.data_master"
    end="pw_mem_15.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018400" />
+  <parameter name="baseAddress" value="0x00018780" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3228,7 +3228,7 @@
    start="nios2.data_master"
    end="pw_mem_16.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018440" />
+  <parameter name="baseAddress" value="0x00018800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3237,7 +3237,7 @@
    start="nios2.data_master"
    end="pw_mem_17.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018480" />
+  <parameter name="baseAddress" value="0x00018880" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3246,7 +3246,7 @@
    start="nios2.data_master"
    end="pw_mem_18.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000184c0" />
+  <parameter name="baseAddress" value="0x00018900" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3255,7 +3255,7 @@
    start="nios2.data_master"
    end="pw_mem_19.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018500" />
+  <parameter name="baseAddress" value="0x00018980" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3264,7 +3264,7 @@
    start="nios2.data_master"
    end="pw_mem_20.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018540" />
+  <parameter name="baseAddress" value="0x00018a00" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3273,7 +3273,7 @@
    start="nios2.data_master"
    end="pw_mem_21.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018580" />
+  <parameter name="baseAddress" value="0x00018a80" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3282,7 +3282,7 @@
    start="nios2.data_master"
    end="pw_mem_22.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000185c0" />
+  <parameter name="baseAddress" value="0x00018b00" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3291,7 +3291,7 @@
    start="nios2.data_master"
    end="pw_mem_23.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018600" />
+  <parameter name="baseAddress" value="0x00018b80" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3300,7 +3300,7 @@
    start="nios2.data_master"
    end="pw_mem_24.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018640" />
+  <parameter name="baseAddress" value="0x00018c00" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3309,7 +3309,7 @@
    start="nios2.data_master"
    end="pw_mem_25.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018680" />
+  <parameter name="baseAddress" value="0x00018c80" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3318,7 +3318,7 @@
    start="nios2.data_master"
    end="pw_mem_26.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000186c0" />
+  <parameter name="baseAddress" value="0x00018d00" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3327,7 +3327,7 @@
    start="nios2.data_master"
    end="pw_mem_27.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018700" />
+  <parameter name="baseAddress" value="0x00018d80" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3336,7 +3336,7 @@
    start="nios2.data_master"
    end="pw_mem_28.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018740" />
+  <parameter name="baseAddress" value="0x00018e00" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3345,7 +3345,7 @@
    start="nios2.data_master"
    end="pw_mem_29.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018780" />
+  <parameter name="baseAddress" value="0x00018e80" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3354,7 +3354,7 @@
    start="nios2.data_master"
    end="pw_mem_30.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x000187c0" />
+  <parameter name="baseAddress" value="0x00018f00" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3363,7 +3363,7 @@
    start="nios2.data_master"
    end="pw_mem_31.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018800" />
+  <parameter name="baseAddress" value="0x00018f80" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="16.0" start="nios2.data_master" end="mem.s1">
@@ -3373,7 +3373,7 @@
  </connection>
  <connection kind="avalon" version="16.0" start="nios2.data_master" end="leds.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00018000" />
+  <parameter name="baseAddress" value="0x00010800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection

@@ -162,7 +162,7 @@ add_interface_port out out_valid valid Output 1
 # connection point store
 # 
 add_interface store avalon start
-set_interface_property store addressUnits SYMBOLS
+set_interface_property store addressUnits WORDS
 set_interface_property store associatedClock clock
 set_interface_property store associatedReset reset
 set_interface_property store bitsPerSymbol 8

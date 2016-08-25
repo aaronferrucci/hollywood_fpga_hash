@@ -189,10 +189,10 @@ module pw_gen #(
           store_addr <= '0;
         end
         else if (!received_req && (state == ST_MGMT)) begin
-          store_addr &= 6'b11_1000;
+          store_addr &= 6'b1111_00;
         end
         else begin
-          store_addr <= store_addr + 6'h2;
+          store_addr <= store_addr + 6'h1;
         end
 
       end

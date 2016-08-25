@@ -373,8 +373,12 @@ set_instance_parameter_value reset_bridge_0 {SYNCHRONOUS_EDGES} {none}
 set_instance_parameter_value reset_bridge_0 {NUM_RESET_OUTPUTS} {1}
 set_instance_parameter_value reset_bridge_0 {USE_RESET_REQUEST} {0}
 
-set num_engines 32
-for {set i 0 } {$i < $num_engines} {incr i} {
+# Warning: software makes assumptions about relative base addresses
+# pw_gen instance csr interfaces are expected to be packed in the
+# nios2 data master memory map starting with pw_gen_0.csr
+# Similar for pw_mem_0.s1.
+set num_hashers 32
+for {set i 0 } {$i < $num_hashers} {incr i} {
   add_instance hollywood_hash_core_$i hollywood_hash_core 1.0
   set_instance_parameter_value hollywood_hash_core_$i {R4} {65201}
   set_instance_parameter_value hollywood_hash_core_$i {R6} {37528}
@@ -382,8 +386,8 @@ for {set i 0 } {$i < $num_engines} {incr i} {
   add_instance pw_gen_$i pw_gen 1.0
   set_instance_parameter_value pw_gen_$i {PW1_RESET} {0}
   set_instance_parameter_value pw_gen_$i {PW2_RESET} {0}
-  set_instance_parameter_value pw_gen_$i {PW3_RESET} [ expr {$i * (256 / $num_engines)} ]
-  set_instance_parameter_value pw_gen_$i {PW3_FINAL} [ expr {-1 + ($i + 1) * (256 / $num_engines)} ]
+  set_instance_parameter_value pw_gen_$i {PW3_RESET} [ expr {$i * (256 / $num_hashers)} ]
+  set_instance_parameter_value pw_gen_$i {PW3_FINAL} [ expr {-1 + ($i + 1) * (256 / $num_hashers)} ]
 
   add_instance pw_mem_$i altera_avalon_onchip_memory2 16.0
   set_instance_parameter_value pw_mem_$i {allowInSystemMemoryContentEditor} {0}
@@ -395,7 +399,8 @@ for {set i 0 } {$i < $num_engines} {incr i} {
   set_instance_parameter_value pw_mem_$i {initMemContent} {0}
   set_instance_parameter_value pw_mem_$i {initializationFileName} {onchip_mem.hex}
   set_instance_parameter_value pw_mem_$i {instanceID} {NONE}
-  set_instance_parameter_value pw_mem_$i {memorySize} {64.0}
+  set pw_mem_span 128
+  set_instance_parameter_value pw_mem_$i {memorySize} $pw_mem_span 
   set_instance_parameter_value pw_mem_$i {readDuringWriteMode} {DONT_CARE}
   set_instance_parameter_value pw_mem_$i {simAllowMRAMContentsFile} {0}
   set_instance_parameter_value pw_mem_$i {simMemInitOnlyFilename} {0}
@@ -416,7 +421,7 @@ for {set i 0 } {$i < $num_engines} {incr i} {
 
   add_connection nios2.data_master pw_mem_$i.s1
   set_connection_parameter_value nios2.data_master/pw_mem_$i.s1 arbitrationPriority {1}
-  set_connection_parameter_value nios2.data_master/pw_mem_$i.s1 baseAddress [expr {0x00018040 + 0x40 * $i} ]
+  set_connection_parameter_value nios2.data_master/pw_mem_$i.s1 baseAddress [expr {0x00018000 + $pw_mem_span * $i} ]
   set_connection_parameter_value nios2.data_master/pw_mem_$i.s1 defaultConnection {0}
 
   add_connection pw_gen_$i.store pw_mem_$i.s2
@@ -459,12 +464,12 @@ set_interface_property reset_bridge_0_in_reset EXPORT_OF reset_bridge_0.in_reset
 # connections and connection parameters
 add_connection nios2.data_master jtag_uart.avalon_jtag_slave
 set_connection_parameter_value nios2.data_master/jtag_uart.avalon_jtag_slave arbitrationPriority {1}
-set_connection_parameter_value nios2.data_master/jtag_uart.avalon_jtag_slave baseAddress {0x00018030}
+set_connection_parameter_value nios2.data_master/jtag_uart.avalon_jtag_slave baseAddress {0x00010820}
 set_connection_parameter_value nios2.data_master/jtag_uart.avalon_jtag_slave defaultConnection {0}
 
 add_connection nios2.data_master sysid_0.control_slave
 set_connection_parameter_value nios2.data_master/sysid_0.control_slave arbitrationPriority {1}
-set_connection_parameter_value nios2.data_master/sysid_0.control_slave baseAddress {0x00018010}
+set_connection_parameter_value nios2.data_master/sysid_0.control_slave baseAddress {0x00010830}
 set_connection_parameter_value nios2.data_master/sysid_0.control_slave defaultConnection {0}
 
 add_connection nios2.data_master nios2.debug_mem_slave
@@ -474,7 +479,7 @@ set_connection_parameter_value nios2.data_master/nios2.debug_mem_slave defaultCo
 
 add_connection nios2.data_master pll.pll_slave
 set_connection_parameter_value nios2.data_master/pll.pll_slave arbitrationPriority {1}
-set_connection_parameter_value nios2.data_master/pll.pll_slave baseAddress {0x00018020}
+set_connection_parameter_value nios2.data_master/pll.pll_slave baseAddress {0x00010810}
 set_connection_parameter_value nios2.data_master/pll.pll_slave defaultConnection {0}
 
 add_connection nios2.data_master mem.s1
@@ -484,7 +489,7 @@ set_connection_parameter_value nios2.data_master/mem.s1 defaultConnection {0}
 
 add_connection nios2.data_master leds.s1
 set_connection_parameter_value nios2.data_master/leds.s1 arbitrationPriority {1}
-set_connection_parameter_value nios2.data_master/leds.s1 baseAddress {0x00018000}
+set_connection_parameter_value nios2.data_master/leds.s1 baseAddress {0x00010800}
 set_connection_parameter_value nios2.data_master/leds.s1 defaultConnection {0}
 
 add_connection nios2.instruction_master nios2.debug_mem_slave

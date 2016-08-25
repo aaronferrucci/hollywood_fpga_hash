@@ -116,16 +116,16 @@ void clear(t_hasher *p_hasher)
 	  pMem1[i] = 0;
   }
 }
-//
+
 // Warning: note assumptions about relative base addresses. See hollywood_hash.tcl.
-void init_hashers(t_hasher hashers[], int num_hashers, int gen_base, int mem_base, int span)
+void init_hashers(t_hasher hashers[], int num_hashers)
 {
   int i;
   for (i = 0; i < num_hashers; ++i)
   {
-	hashers[i].pCSR = (volatile int*)(0x00020000 + 8 * i);
-	hashers[i].pMEM = (volatile unsigned short*)(0x00018040 + 0x40 * i);
-	hashers[i].span = span;
+	hashers[i].pCSR = (volatile int*)(PW_GEN_0_BASE + PW_GEN_0_SPAN * i);
+	hashers[i].pMEM = (volatile unsigned short*)(PW_MEM_0_BASE + PW_MEM_0_SPAN * i);
+	hashers[i].span = PW_MEM_0_SPAN;
   }
 }
 
@@ -134,7 +134,7 @@ int main()
 {
   int count = 0;
   t_hasher hashers[NUM_HASHERS];
-  init_hashers(hashers, NUM_HASHERS, PW_GEN_0_BASE, PW_MEM_0_BASE, PW_MEM_0_SPAN);
+  init_hashers(hashers, NUM_HASHERS);
 
   printf("Hollywood hasher (%d hash engines)\n", NUM_HASHERS);
 #if 1
