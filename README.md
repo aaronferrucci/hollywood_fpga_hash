@@ -153,6 +153,7 @@ The design hierarchy looks like this:
 
 Design flow:
 TODO: do all this in a Makefile! For now, here are the manual steps:
+
 1.  The qsys system is implemented as a tcl script to allow the number of
      hashing functions/password generators to be parameterized. Generate it as
      ```qsys-generate --script=hollywood_hash.tcl```
