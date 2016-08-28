@@ -51,7 +51,7 @@ passwords revealed 18 solutions (after running overnight). Having solved the
 puzzle, I was then able to view the Hall of Fame on the microcorruption 
 site, and could verify that the 5-byte solution is the shortest possible.
 
-(Somewhat to my disappointment, none of the 5-byte passwords is a 
+(To my disappointment, none of the 5-byte passwords is a 
 recognizable phrase; in fact, none consist only of printable characters. 
 I think this is an oversight on the part of the puzzle designers.)
 
@@ -128,13 +128,13 @@ in Modelsim. Finally, the simulation runs and brings up wave window for
 visual inspection.
 
 ## Results
-The current revision has 32 hasher cores.  The hardware is a Max10 development 
+The current revision has 32 hasher cores. The hardware is a Max10 development 
 board, with a 10M50DAF484C6GES device. I was able to clock the accelerator 
-subsystem at 250MHz, and kept the Microproccessor subsystem running at a 
+subsystem at 275MHz, and kept the Microproccessor subsystem running at a 
 nice safe 50MHz since it's not in the critical path.
 
-The system finds all 18 passwords in about 6 1/2 minutes. 
-Compared to the software solution, that's a more than 100x speedup.
+The system finds all 18 passwords in about 5 1/4 minutes. 
+Compared to the software solution, that's about a 138x speedup.
 
 ## Nuts and Bolts
 I used Altera's free 16.0 Lite Edition for hardware development, and the
@@ -156,7 +156,7 @@ TODO: do all this in a Makefile! For now, here are the manual steps:
 
 1.  The qsys system is implemented as a tcl script to allow the number of
      hashing functions/password generators to be parameterized. Generate it as
-     ```qsys-generate --script=hollywood_hash.tcl```
+     ```qsys-script --script=hollywood_hash.tcl```
 1.  open Quartus, and open hollywood_hash.qsys in the Qsys editor
 1.  in the Qsys gui, do "Generate HDL.../Generate"
 1.  compile the design in Quartus
@@ -171,14 +171,15 @@ TODO: do all this in a Makefile! For now, here are the manual steps:
 ## Next steps
 
 ### Performance Boost
-A speedup of 100x (relative to my laptop) is ok, considering that
-* waiting 6.5 minutes for results is far better on a human psychology level
+A speedup of 138x (relative to my laptop) is ok, considering that
+* waiting 5.25 minutes for results is far better on a human psychology level
   than 12 hours
-* the accelerator hardware platform consumes far less power than a full-blown
+* the accelerator hardware platform consumes much less power than a full-blown
   computer
 
 Nonetheless, I think I've only scratched the surface. Here are some ideas 
 for improving the speedup, ranked in increasing difficulty.
+
 1. The hashing function logic delivers one result every four cycles. The fourth
 cycle is used just for resetting the accumulated r4 and r6 values. It's
 probably not too difficul to eliminate that fourth cycle, for a 33% speedup,
@@ -196,13 +197,15 @@ modification...
 1. Another area to explore is to find some higher-performance hardware.
 The Max10 family is definitely not the fastest or largest! I might be able
 to squeeze out another order of magnitude of improvement with a better FPGA.
-1. I've only filled my device about 30%, so I have room to increase the
+1. I've only filled my device about 24%, so I have room to increase the
 number of hashing functions - at least doubling them. The design may
 not scale easily though - at some point the connection from the Nios2 to
-its many dual-port RAMs will be the bottleneck. Besides that, the Nios2
-is a bit of a space hog - I'd rather use its logic for more hashing functions.
-I have in mind a new version,  with no microprocessor, and a memory interface
-layer which is more conducive to high-frequency operation. We shall see!
+its many dual-port RAMs will be the bottleneck. Also, due to memory
+granularity, it might not be possible to increase the number of local 
+memories. Besides that, the Nios2 is a bit of a space hog - I'd rather 
+use its logic for more hashing functions.  I have in mind a new version, 
+with no microprocessor, and a memory subsystem which is more scalable, and
+conducive to high-frequency operation. We shall see!
 
 ### Quality of Results
 None of the 18 minimal-length (5 byte) passwords is made up of all printable
@@ -210,5 +213,4 @@ characters. Too bad; I think that would have been fun - an easter egg of
 sorts. It is possible that somewhere out there in the space of all possible 
 passwords, there is a printable password. A slightly different accelerator 
 could search for printable passwords.
-
 
