@@ -43,11 +43,11 @@ loop:
 ## Brute force software solution
 After staring at the hashing algorithm and the required output values for
 a while, I concluded that I don't know the required math for solving this
-sort of equation. It's definitely easy, though, to test any given password
+sort of puzzle. It's definitely easy, though, to test any given password
 for acceptance. Impatient for a solution, I wrote a C program to test all
-possible passwords of a given length. It didn't take long to conclude that
+possible passwords of a given length. It didn't take long to prove that
 there are no 4-byte passwords. The next version of the program, on 5-byte
-passwords revealed 18 solutions (after running overnight). Having solved the 
+passwords, revealed 18 solutions (after running overnight). Having solved the 
 puzzle, I was then able to view the Hall of Fame on the microcorruption 
 site, and could verify that the 5-byte solution is the shortest possible.
 
@@ -68,11 +68,11 @@ hashers on a chip, and split the password search space among them.
 
 ### Accelerator subsystem
 #### Password generator
-The password generator is fairly simple. Conceptually, it's a 40-bit
-counter, which delivers values to the hashing function. Because the hashing 
-function operates on only 2 bytes at a time - not the full 40 bits - the
-password generator does not need to deliver a new value on each cycle.
-Therefore the incrementing is pipelined: the low 16 bits increment on one cycle;
+This component generates candidate passwords in sequential order. 
+Conceptually, the password generator is just a 40-bit
+counter. Because the hashing 
+function only consumes 2 bytes at a time - not a full 40 bit password - the
+password generator is pipelined: the low 16 bits increment on one cycle;
 the increment is propagated to the next 16 bits in the
 next cycle, and the last 8 bits of the counter increment in the last of 3
 cycles. Segmenting the incrementer in this way allows for a faster clock rate.
@@ -92,7 +92,7 @@ Here's a sketch of the hashing function:
 
 The hashing function tests one 40-bit in 4 clock cycles. After a delay of
 a further 2 cycles, the result (accept or reject) for the password is 
-available; that value is passed back to the password generator.
+available; that result is passed back to the password generator.
 
 #### Local memories
 When the hashing function reports that a password was accepted, the password
@@ -207,7 +207,7 @@ use its logic for more hashing functions.  I have in mind a new version,
 with no microprocessor, and a memory subsystem which is more scalable, and
 conducive to high-frequency operation. We shall see!
 
-### Quality of Results
+### 
 None of the 18 minimal-length (5 byte) passwords is made up of all printable
 characters. Too bad; I think that would have been fun - an easter egg of 
 sorts. It is possible that somewhere out there in the space of all possible 
