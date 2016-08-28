@@ -1,5 +1,5 @@
 # hollywood_fpga_hash
-Custom hardware to compute a hash function.
+Brute-force hash function inversion in a cheap FPGA.
 
 ## Spoiler alert!
 This project implements a brute force solution to a sub-problem of the final 
