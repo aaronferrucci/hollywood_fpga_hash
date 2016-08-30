@@ -207,7 +207,7 @@ use its logic for more hashing functions.  I have in mind a new version,
 with no microprocessor, and a memory subsystem which is more scalable, and
 conducive to high-frequency operation. We shall see!
 
-### 
+### Easter Egg Hunt
 None of the 18 minimal-length (5 byte) passwords is made up of all printable
 characters. Too bad; I think that would have been fun - an easter egg of 
 sorts. It is possible that somewhere out there in the space of all possible 
