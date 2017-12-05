@@ -109,7 +109,7 @@ results out, I
 adjust for this by subtracting one. Another quirk caused by this
 overwrite-and-update scheme is that non-accepted password values will be
 present in the local memories - for example, the final count value. These
-bogus values iare eliminated in software as the results are collected.
+bogus values are eliminated in software as the results are collected.
 
 ### Microprocessor subsystem
 I use a low-performance, low-resource Nios2 microproccessor, with 64Kbytes
