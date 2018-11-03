@@ -148,7 +148,7 @@ The design hierarchy looks like this:
     * Microprocessor subsystem
       * multiple local memories - microprocessor subsystem side
     * Accelerator subsystem
-      * multiple password generators/hsahing function) instances
+      * multiple (password generators/hashing function) instances
       * multiple local memories - accelerator subsystem side
 
 Design flow:
