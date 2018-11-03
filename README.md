@@ -157,7 +157,7 @@ TODO: do all this in a Makefile! For now, here are the manual steps:
 1.  The qsys system is implemented as a tcl script to allow the number of
      hashing functions/password generators to be parameterized. Generate it as
      ```qsys-script --script=hollywood_hash.tcl```
-1.  open Quartus, and open hollywood_hash.qsys in the Qsys editor
+1.  open Quartus, and open hollywood_hash.qsys in the Qsys editor (or Platform Designer, or whatever it's called next)
 1.  in the Qsys gui, do "Generate HDL.../Generate"
 1.  compile the design in Quartus
 1.  turn on the Max10 board
