@@ -9,11 +9,11 @@ set_project_property HIDE_FROM_IP_CATALOG {false}
 
 # Instances and instance parameters
 # (disabled instances are intentionally culled)
-add_instance clk_50 altera_clock_bridge 16.0
+add_instance clk_50 altera_clock_bridge
 set_instance_parameter_value clk_50 {EXPLICIT_CLOCK_RATE} {50.0}
 set_instance_parameter_value clk_50 {NUM_CLOCK_OUTPUTS} {1}
 
-add_instance jtag_uart altera_avalon_jtag_uart 16.0
+add_instance jtag_uart altera_avalon_jtag_uart
 set_instance_parameter_value jtag_uart {allowMultipleConnections} {0}
 set_instance_parameter_value jtag_uart {hubInstanceID} {0}
 set_instance_parameter_value jtag_uart {readBufferDepth} {64}
@@ -26,7 +26,7 @@ set_instance_parameter_value jtag_uart {useRelativePathForSimFile} {0}
 set_instance_parameter_value jtag_uart {writeBufferDepth} {64}
 set_instance_parameter_value jtag_uart {writeIRQThreshold} {8}
 
-add_instance leds altera_avalon_pio 16.0
+add_instance leds altera_avalon_pio
 set_instance_parameter_value leds {bitClearingEdgeCapReg} {0}
 set_instance_parameter_value leds {bitModifyingOutReg} {0}
 set_instance_parameter_value leds {captureEdge} {0}
@@ -39,7 +39,7 @@ set_instance_parameter_value leds {simDoTestBenchWiring} {0}
 set_instance_parameter_value leds {simDrivenValue} {0.0}
 set_instance_parameter_value leds {width} {5}
 
-add_instance mem altera_avalon_onchip_memory2 16.0
+add_instance mem altera_avalon_onchip_memory2
 set_instance_parameter_value mem {allowInSystemMemoryContentEditor} {0}
 set_instance_parameter_value mem {blockType} {AUTO}
 set_instance_parameter_value mem {dataWidth} {32}
@@ -63,7 +63,7 @@ set_instance_parameter_value mem {writable} {1}
 set_instance_parameter_value mem {ecc_enabled} {0}
 set_instance_parameter_value mem {resetrequest_enabled} {1}
 
-add_instance nios2 altera_nios2_gen2 16.0
+add_instance nios2 altera_nios2_gen2
 set_instance_parameter_value nios2 {tmr_enabled} {0}
 set_instance_parameter_value nios2 {setting_disable_tmr_inj} {0}
 set_instance_parameter_value nios2 {setting_showUnpublishedSettings} {0}
@@ -202,7 +202,7 @@ set_instance_parameter_value nios2 {instruction_master_high_performance_paddr_si
 set_instance_parameter_value nios2 {data_master_high_performance_paddr_base} {0}
 set_instance_parameter_value nios2 {data_master_high_performance_paddr_size} {0.0}
 
-add_instance pll altpll 16.0
+add_instance pll altpll
 set_instance_parameter_value pll {HIDDEN_CUSTOM_ELABORATION} {altpll_avalon_elaboration}
 set_instance_parameter_value pll {HIDDEN_CUSTOM_POST_EDIT} {altpll_avalon_post_edit}
 set_instance_parameter_value pll {INTENDED_DEVICE_FAMILY} {MAX 10}
@@ -368,7 +368,7 @@ set_instance_parameter_value pll {HIDDEN_IF_PORTS} {IF#phasecounterselect {input
 set_instance_parameter_value pll {HIDDEN_IS_FIRST_EDIT} {0}
 
 
-add_instance reset_bridge_0 altera_reset_bridge 16.0
+add_instance reset_bridge_0 altera_reset_bridge
 set_instance_parameter_value reset_bridge_0 {ACTIVE_LOW_RESET} {1}
 set_instance_parameter_value reset_bridge_0 {SYNCHRONOUS_EDGES} {none}
 set_instance_parameter_value reset_bridge_0 {NUM_RESET_OUTPUTS} {1}
@@ -447,7 +447,7 @@ for {set i 0 } {$i < $num_hashers} {incr i} {
 
 }
 
-add_instance sysid_0 altera_avalon_sysid_qsys 16.0
+add_instance sysid_0 altera_avalon_sysid_qsys
 set_instance_parameter_value sysid_0 {id} {-21917032}
 
 # exported interfaces
