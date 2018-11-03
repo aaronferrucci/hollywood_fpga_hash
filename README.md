@@ -121,7 +121,7 @@ The custom components which comprise the accelerator subsystem - hashing
 function, password generator - are not so complex, but nonetheless it's
 useful to debug them in isolation. Simulation testbenches for both components,
 with simple test programs to stimulate activity are provided. To run the
-simulations, do ```make SIM=test_core``` or ```make SIM=test_pw_gen```. In
+simulations, do ```make SYS=test_core``` or ```make SYS=test_pw_gen```. In
 either case, a test system containing the device to test is generated, then
 the generated logic, testbench, and hand-written test program are compiled
 in Modelsim. Finally, the simulation runs and brings up wave window for 
