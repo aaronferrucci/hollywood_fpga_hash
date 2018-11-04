@@ -344,7 +344,6 @@ set_location_assignment PIN_Y7 -to REGEN_EN_N
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to REGEN_EN_N
 set_global_assignment -name SYSTEMVERILOG_FILE hollywood_hash_top.sv
 set_global_assignment -name QIP_FILE hollywood_hash/synthesis/hollywood_hash.qip
-set_global_assignment -name VERILOG_FILE hollywood_hash/synthesis/hollywood_hash.v -library hollywood_hash
 set_global_assignment -name SDC_FILE hollywood_hash.sdc
 
 set_global_assignment -name CDF_FILE output_files/Chain1.cdf
