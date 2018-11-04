@@ -148,8 +148,9 @@ int main()
   // all should be.
   while(read_csr(&hashers[NUM_HASHERS - 1])) {
     alt_busy_sleep(1000000);
-    write_led(count++);
+    write_led(count);
     printf("count: %d\n", count);
+    count++;
   }
 
   int num_passwords = 0;
